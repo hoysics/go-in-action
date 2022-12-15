@@ -25,7 +25,7 @@ func (lc *Lz4) Compress(originBuff []byte) ([]byte, error) {
 
 }
 
-func (lc *Lz4) UnCompress(originBuff []byte) ([]byte, error) {
+func (lc *Lz4) Uncompress(originBuff []byte) ([]byte, error) {
 	val := make([]byte, lc.size)
 	n, err := lz4.UncompressBlock(originBuff, val)
 	if err != nil {

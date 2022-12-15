@@ -38,7 +38,7 @@ func (g *GZip) Compress(originBuff []byte) ([]byte, error) {
 	return g.buf.Bytes(), nil
 }
 
-func (g *GZip) UnCompress(originBuff []byte) ([]byte, error) {
+func (g *GZip) Uncompress(originBuff []byte) ([]byte, error) {
 	buf := bytes.NewBuffer(originBuff)
 	r, err := gzip.NewReader(buf)
 	if err != nil {

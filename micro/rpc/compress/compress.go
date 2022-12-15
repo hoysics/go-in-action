@@ -8,7 +8,7 @@ package compress
 type Compressor interface {
 	Code() byte
 	Compress(data []byte) ([]byte, error)
-	UnCompress(data []byte) ([]byte, error)
+	Uncompress(data []byte) ([]byte, error)
 }
 
 type DoNothingCompressor struct {
@@ -22,6 +22,6 @@ func (d DoNothingCompressor) Compress(data []byte) ([]byte, error) {
 	return data, nil
 }
 
-func (d DoNothingCompressor) UnCompress(data []byte) ([]byte, error) {
+func (d DoNothingCompressor) Uncompress(data []byte) ([]byte, error) {
 	return data, nil
 }
